@@ -13,7 +13,7 @@ const Header = () => {
            <div className="title">
 <p onClick={()=>{navigate('/')}}>Retro Tape</p>
            </div>
-           <div className="options">
+           <div className="options" onClick={()=>{navigate('/view?87x5x')}}>
             <img src={minimise} alt="" className="option-icon" srcset="" />
 <img src={maximise} alt="" className="option-icon"  srcset="" />
 <img src={close} alt=""  className="option-icon" srcset="" />

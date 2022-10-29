@@ -12,6 +12,7 @@
 }
 
 .startCont{
+    cursor: pointer;
     width: 10rem;
     background-color: #8EB79A;
     color: white;
@@ -37,4 +38,28 @@
     font-weight: 500;
     justify-content: center;
     align-items: center;
+}
+
+.menu{
+    position: fixed;
+    bottom: 3rem;
+    width: 12rem;
+    height: 15rem;
+    background-color: #EBD397;
+    box-shadow:2px 2px hwb(0 92% 8% / 0.422);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 2rem;
+}
+
+.start-menu{
+    color: white;
+    width: 100%;
+    height: 3rem;
+    background-color: #e8ca7e;
+cursor: pointer;
 }
