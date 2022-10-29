@@ -2,7 +2,7 @@ import { db } from "../utils/utils";
 import Modal from 'react-modal';
 import { useState, useEffect } from "react";
 import '../styles/create.css'
-
+import add from '../images/add.svg'
 
 import { doc, setDoc } from "firebase/firestore";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
@@ -19,6 +19,9 @@ const Create = () => {
 
       if(songs.length>15){
         alert("The maximum song limit is 15")
+      }
+      else if(songs.length<2){
+        alert("Please enter at least 2 songs")
       }
       else{
         var randomString = (Math.random() + 1).toString(36).substring(7);
@@ -83,11 +86,13 @@ const Create = () => {
       <Header/>
 
       <div className="create-content">
-      <h1>Create Your RetroTape</h1>
-        <input type="text" name="name" id="" placeholder="enter song name" value={songname} onChange={(e)=>{setName(e.target.value)}}/>
+        
+   <div className="inputs">
+   <input type="text" name="name" id="" placeholder="enter song name" value={songname} onChange={(e)=>{setName(e.target.value)}}/>
         <input type="text" name="link" id="" placeholder="enter youtube link" value={songlink} onChange={(e)=>{setLink(e.target.value)}}/>
-        <button onClick={()=>{setNewSong({"name": songname, "link": songlink})}}>Add</button>
-        <br /><br />
+        <div ><img src={add} onClick={()=>{setNewSong({"name": songname, "link": songlink})}} className="addbtn" alt="" />
+        </div>
+   </div>
         <div className="songsTile">
         {
        songs!=[]?  <div>

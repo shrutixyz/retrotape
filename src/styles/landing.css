@@ -32,4 +32,19 @@
     position: fixed;
     right: -5rem;
     bottom: -5rem;
+    animation-iteration-count: infinite;
+
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+@keyframes example {
+    0% {transform: rotate(20deg);}
+    50% {transform: rotate(26deg);}
+    100% {transform: rotate(20deg);}
+  }
+
+.createt{
+    font-family: "righteous";
+    font-weight: 500;
 }

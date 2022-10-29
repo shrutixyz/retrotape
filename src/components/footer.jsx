@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="footer">
             <div className="startCont">
             <img src={start} alt="" height={40} />
-<p className="start-text">start</p>
+<p className="start-text"><i>start</i></p>
             </div>
             <div className="time">
           

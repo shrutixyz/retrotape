@@ -11,7 +11,7 @@ const Header = () => {
 
         <div className="header">
            <div className="title">
-<p>Retro Tape</p>
+<p onClick={()=>{navigate('/')}}>Retro Tape</p>
            </div>
            <div className="options">
             <img src={minimise} alt="" className="option-icon" srcset="" />
