@@ -1,7 +1,27 @@
-import { useState, useEffect } from "react";
+import { db } from "../utils/utils";
 import Modal from 'react-modal';
+import { useState, useEffect } from "react";
+
+import { doc, setDoc } from "firebase/firestore";
+import { getStorage, ref, uploadBytes } from "firebase/storage";
+
+
+const grabLink = require('youtube-thumbnail-grabber')
+
 
 const Create = () => {
+
+    const Push = async () => {
+       var randomString = (Math.random() + 1).toString(36).substring(7);
+
+        const docRef = doc(db, 'tapes', randomString);
+        await setDoc(docRef, {songs: songs}).then((val)=>{
+          console.log(val)
+        })
+        setRandomString(randomString)
+    
+openModal()
+      }
 
     const customStyles = {
         content: {
@@ -15,8 +35,9 @@ const Create = () => {
       };
 
     const [songs, setSongs] = useState([]);
-    const [songname, setName] = useState(null);
-    const [songlink, setLink] = useState(null);
+    const [randomString, setRandomString] = useState(null);
+    const [songname, setName] = useState('');
+    const [songlink, setLink] = useState('');
 
     const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -38,8 +59,8 @@ const Create = () => {
         newSong["key"] = songs.length
         songs.push(newSong);
         setSongs(tempData);
-        setName(null)
-        setLink(null)
+        setName('')
+        setLink('')
         console.log(songs)
         this.forceUpdate();
 
@@ -47,8 +68,8 @@ const Create = () => {
     return (
       <>
         <h1>Create Your RetroTape</h1>
-        <input type="text" name="name" id="" placeholder="enter song name" onChange={(e)=>{setName(e.target.value)}}/>
-        <input type="text" name="link" id="" placeholder="enter youtube link" onChange={(e)=>{setLink(e.target.value)}}/>
+        <input type="text" name="name" id="" placeholder="enter song name" value={songname} onChange={(e)=>{setName(e.target.value)}}/>
+        <input type="text" name="link" id="" placeholder="enter youtube link" value={songlink} onChange={(e)=>{setLink(e.target.value)}}/>
         <button onClick={()=>{setNewSong({"name": songname, "link": songlink})}}>Add</button>
         <br /><br />
         <div className="songsTile">
@@ -57,14 +78,19 @@ const Create = () => {
 
         {
             songs.map((item)=>{
-                return <p>{item["name"]}</p>
+                return <div>
+<img src={grabLink(item["link"], 'mq')} alt="" height="200px" />
+<p>{item["name"]}</p>
+                </div>
             })
         }
        </div> :  <p>nothing here</p>
             }
         </div>
 
-        <button onClick={openModal}>Save and Share</button>
+        <button onClick={()=>{
+            Push()
+        }}>Save and Share</button>
         <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
@@ -72,9 +98,9 @@ const Create = () => {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <h2 >Congrats, your retrotape is at </h2>
+        <h2 >Congrats, your retrotape is at</h2>
         <button onClick={closeModal}>Done</button>
-        <p>https://ejkrtirfed/com</p>
+        <p>https://retrotape.web.app/view?{randomString}</p>
         <button>share</button>
       </Modal>
       </>
