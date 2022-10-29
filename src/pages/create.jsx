@@ -121,7 +121,7 @@ const Create = () => {
       >
         <h2 >Congrats, your retrotape is at</h2>
         <button onClick={closeModal}>Done</button>
-        <p>https://retrotape.web.app/view?{randomString}</p>
+        <p>https://checkapppp.web.app/view?{randomString}</p>
         <button>share</button>
       </Modal>
          </div>
