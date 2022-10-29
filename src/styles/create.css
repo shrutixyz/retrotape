@@ -49,3 +49,59 @@ border: none;
     justify-content: center;
     align-items: center;
 }
+
+.cassette {
+    margin-top: 100px;
+    display: inline-block;
+    position: relative;
+    width: 280px;
+    height: 187px;
+    margin-left: 20px;
+}
+
+.cassette-items {
+    position: absolute;
+    top: 0;
+    left: 35%;
+    align-items: center;
+    justify-content: center;
+    /* z-index: 2; */
+}
+
+.cassette-items img {
+    margin-top: 75px;
+}
+
+.cassette-bg {
+    
+    width: 280px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.songsTile {
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.cassette-parent {
+    height: 100%;
+}
+
+.cassette-thumb {
+    width: auto;
+    height: 50px;
+    object-fit: contain;
+}
+
+.btn {
+    background-color: #F16A43;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+

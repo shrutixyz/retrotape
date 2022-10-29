@@ -8,6 +8,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import cassette from '../images/cassette.png'
 
 
 const grabLink = require('youtube-thumbnail-grabber')
@@ -95,13 +96,17 @@ const Create = () => {
    </div>
         <div className="songsTile">
         {
-       songs!=[]?  <div>
+       songs!=[]?  <div className="cassette-parent">
 
         {
             songs.map((item)=>{
-                return <div>
-<img src={grabLink(item["link"], 'mq')} alt="" height="200px" />
-<p>{item["name"]}</p>
+                return <div className="cassette">
+                  <img className="cassette-bg" src={cassette} alt="" />
+                  <div className="cassette-items">
+                    <p>{item["name"]}</p>
+                    <img className="cassette-thumb" src={grabLink(item["link"], 'mq')} alt="" height="50px" />
+                  </div>
+                  
                 </div>
             })
         }
@@ -109,7 +114,7 @@ const Create = () => {
             }
         </div>
 
-        <button onClick={()=>{
+        <button className="btn" onClick={()=>{
             Push()
         }}>Save and Share</button>
         <Modal
@@ -120,9 +125,9 @@ const Create = () => {
         contentLabel="Example Modal"
       >
         <h2 >Congrats, your retrotape is at</h2>
-        <button onClick={closeModal}>Done</button>
+        <button className="btn" onClick={closeModal}>Done</button>
         <p>https://retrotape.web.app/view?{randomString}</p>
-        <button>share</button>
+        <button className="btn">share</button>
       </Modal>
          </div>
 
