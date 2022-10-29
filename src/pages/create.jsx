@@ -1,9 +1,13 @@
 import { db } from "../utils/utils";
 import Modal from 'react-modal';
 import { useState, useEffect } from "react";
+import '../styles/create.css'
+
 
 import { doc, setDoc } from "firebase/firestore";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 
 const grabLink = require('youtube-thumbnail-grabber')
@@ -12,15 +16,23 @@ const grabLink = require('youtube-thumbnail-grabber')
 const Create = () => {
 
     const Push = async () => {
-       var randomString = (Math.random() + 1).toString(36).substring(7);
+
+      if(songs.length>15){
+        alert("The maximum song limit is 15")
+      }
+      else{
+        var randomString = (Math.random() + 1).toString(36).substring(7);
 
         const docRef = doc(db, 'tapes', randomString);
         await setDoc(docRef, {songs: songs}).then((val)=>{
           console.log(val)
         })
         setRandomString(randomString)
+        openModal()
+
+      }
+       
     
-openModal()
       }
 
     const customStyles = {
@@ -65,9 +77,13 @@ openModal()
         this.forceUpdate();
 
     }
+
     return (
       <>
-        <h1>Create Your RetroTape</h1>
+      <Header/>
+
+      <div className="create-content">
+      <h1>Create Your RetroTape</h1>
         <input type="text" name="name" id="" placeholder="enter song name" value={songname} onChange={(e)=>{setName(e.target.value)}}/>
         <input type="text" name="link" id="" placeholder="enter youtube link" value={songlink} onChange={(e)=>{setLink(e.target.value)}}/>
         <button onClick={()=>{setNewSong({"name": songname, "link": songlink})}}>Add</button>
@@ -103,8 +119,15 @@ openModal()
         <p>https://retrotape.web.app/view?{randomString}</p>
         <button>share</button>
       </Modal>
+         </div>
+
+         
+        <Footer/>
+        
       </>
     );
+
+   
   };
   
   export default Create;

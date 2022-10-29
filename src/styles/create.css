@@ -1,0 +1,9 @@
+.create-content{
+    height: 100vh;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5E1AD;
+}

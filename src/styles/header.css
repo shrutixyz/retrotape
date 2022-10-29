@@ -1,0 +1,29 @@
+.header{
+    margin: 0;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    background-color: #F16A43;
+    color: white;
+    height: 3rem;
+}
+
+.title{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: 1rem;
+}
+
+.option-icon{
+    height: 2rem;
+}
+
+.options{
+
+    margin-right: 2rem;
+    display: flex;
+    gap: 0.5rem;
+}
