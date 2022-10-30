@@ -15,7 +15,7 @@ const Landing = () => {
 <div className="subtitle">
 <p className="createt">Create personalised mixtapes, dressed in retro</p>
 </div>
-      <button className="btn" onClick={()=>{navigate('/create')}}>create your own mixtape</button>
+      <button className="btn1" onClick={()=>{navigate('/create')}}>create your own mixtape</button>
       <img src={cassette} alt="" className="cst" />
          </div>
 

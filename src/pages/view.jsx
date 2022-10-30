@@ -19,6 +19,9 @@ const grabLink = require('youtube-thumbnail-grabber')
 
 
 const View =()=>{
+
+  
+
     const navigate = useNavigate()
     const queryString = window.location.search.split('?')[1];
     console.log(queryString);
@@ -59,7 +62,7 @@ if(!fetched){
 
 return (
     <>
-<div className='viewbody'>
+<div className='viewbody' id='viewbody' >
 
 <div className='viewplayer'>
   <div className='toggle'>

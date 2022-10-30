@@ -57,19 +57,32 @@ border: none;
     width: 280px;
     height: 187px;
     margin-left: 20px;
+    transition: 0.5s;
+
 }
+
+.cassette:hover {
+transform: rotate(-10deg);
+    animation-duration: 2s;
+}
+
 
 .cassette-items {
     position: absolute;
+    width: 100%;
     top: 0;
-    left: 35%;
+    /* left: calc(50% - 50px); */
     align-items: center;
     justify-content: center;
+    /* background-color: orange; */
     /* z-index: 2; */
 }
 
 .cassette-items img {
-    margin-top: 75px;
+    margin-top: 85px;
+    height: 2.5rem;
+    object-fit: cover;
+    width: 5rem;
 }
 
 .cassette-bg {

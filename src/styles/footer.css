@@ -45,7 +45,7 @@
     bottom: 3rem;
     width: 12rem;
     height: 15rem;
-    background-color: #EBD397;
+    background-color: #efa159;
     box-shadow:2px 2px hwb(0 92% 8% / 0.422);
     display: flex;
     flex-direction: column;
@@ -60,6 +60,6 @@
     color: white;
     width: 100%;
     height: 3rem;
-    background-color: #e8ca7e;
+    background-color: #e7c369;
 cursor: pointer;
 }

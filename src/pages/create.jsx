@@ -9,6 +9,7 @@ import { getStorage, ref, uploadBytes } from "firebase/storage";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import cassette from '../images/cassette.png'
+import { RWebShare } from "react-web-share";
 
 
 const grabLink = require('youtube-thumbnail-grabber')
@@ -125,9 +126,23 @@ const Create = () => {
         contentLabel="Example Modal"
       >
         <h2 >Congrats, your retrotape is at</h2>
-        <button className="btn" onClick={closeModal}>Done</button>
+        
         <p>https://checkapppp.web.app/view?{randomString}</p>
-        <button className="btn">share</button>
+        <div style={{"display": "flex", "gap": "2rem"}}>
+
+        <RWebShare
+        data={{
+          text: "Take a look at my retrotape, created just for you <3",
+          url: "https://checkapppp.web.app/view?"+{randomString},
+          title: "RetroTape MixTape",
+        }}
+        onClick={() => console.log("shared successfully!")}
+      >
+        <button className="btn">share</button> 
+      </RWebShare>
+
+        <button className="btn" onClick={closeModal}>Done</button>
+        </div>
       </Modal>
          </div>
 
