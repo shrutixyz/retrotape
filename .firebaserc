@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "checkapppp"
-  }
+  },
+  "targets": {
+    "checkapppp": {
+      "hosting": {
+        "retrotape": [
+          "retrotape"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

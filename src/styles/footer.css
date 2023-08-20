@@ -1,65 +1,109 @@
-.footer{
-    margin: 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #F16A43;
-    color: white;
-    height: 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.footer {
+  margin: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f16a43;
+  color: white;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.startCont{
-    cursor: pointer;
-    width: 10rem;
-    background-color: #8EB79A;
-    color: white;
-    height: 100%;
-    border-radius: 0rem 5rem 5rem 0rem;
-    display: flex;
-    gap: 1rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    justify-content: start;
-    padding-left: 1.5rem;
-    align-items: center;
-    font-family: "roboto";
+.startCont {
+  cursor: pointer;
+  width: 10rem;
+  background-color: #8eb79a;
+  color: white;
+  height: 100%;
+  border-radius: 0rem 5rem 5rem 0rem;
+  display: flex;
+  gap: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  justify-content: start;
+  padding-left: 1.5rem;
+  align-items: center;
+  font-family: "roboto";
 }
 
-.time{
-    width: 10rem;
-    background-color: #8EB79A;
-    color: white;
-    height: 100%;
-    display: flex;
-    font-size: 1.3rem;
-    font-weight: 500;
-    justify-content: center;
-    align-items: center;
+.time {
+  width: 10rem;
+  background-color: #8eb79a;
+  color: white;
+  height: 100%;
+  display: flex;
+  font-size: 1.3rem;
+  font-weight: 500;
+  justify-content: center;
+  align-items: center;
 }
 
-.menu{
-    position: fixed;
-    bottom: 3rem;
-    width: 12rem;
-    height: 15rem;
-    background-color: #efa159;
-    box-shadow:2px 2px hwb(0 92% 8% / 0.422);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    gap: 2rem;
+.menu {
+  position: fixed;
+  bottom: 3rem;
+  width: 25rem;
+  height: 35rem;
+  background-color: #f16a43;
+  box-shadow: 2px 2px hwb(0 92% 8% / 0.422);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  /* gap: 2rem; */
 }
 
-.start-menu{
-    color: white;
-    width: 100%;
-    height: 3rem;
-    background-color: #e7c369;
-cursor: pointer;
+.start-menu {
+  color: white;
+  width: 100%;
+  height: 3rem;
+  background-color: #e7c369;
+  cursor: pointer;
+}
+
+.menu-left {
+  width: 5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menu-right {
+  width: 100%;
+  background-color: #e7c36921;
+  height: 100%;
+}
+
+.menu-left-icons {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 10rem;
+  background-color: white;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+#github {
+  background-image: url("https://cdn-icons-png.flaticon.com/512/25/25231.png");
+  background-size: cover;
+}
+
+#aakash {
+  background-image: url("https://avatars.githubusercontent.com/u/69726390?v=4");
+  background-size: cover;
+}
+
+#shruti {
+  background-image: url("https://avatars.githubusercontent.com/u/67964188?v=4");
+  background-size: cover;
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    display: none;
+  }
 }

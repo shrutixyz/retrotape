@@ -1,50 +1,79 @@
-.content{
-    height: 100vh;
-    max-height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #F5E1AD;
+.content {
+  height: 100vh;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5e1ad;
 }
 
-.btn1{
-    width: 30rem;
-    background-color: #F16A43;
-    height: 3rem;
-    border-radius: 0.5rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
+.btn1 {
+  width: 30rem;
+  background-color: #f16a43;
+  height: 3rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  border: none;
+  cursor: pointer;
 }
 
-.subtitle{
-    text-align: center;
-    width: 35rem;
-    font-weight: 700;
-    font-size: 2.4rem;
+.subtitle {
+  text-align: center;
+  width: 35rem;
+  font-weight: 700;
+  font-size: 2.4rem;
 }
 
-.cst{
-    transform: rotate(23deg);
-    width: 30rem;
-    position: fixed;
-    right: -5rem;
-    bottom: -5rem;
-    animation-iteration-count: infinite;
+.cst {
+  transform: rotate(23deg);
+  width: 30rem;
+  position: fixed;
+  right: -5rem;
+  bottom: -5rem;
+  animation-iteration-count: infinite;
 
-    animation-name: example;
-    animation-duration: 4s;
+  animation-name: example;
+  animation-duration: 4s;
 }
 
 @keyframes example {
-    0% {transform: rotate(20deg);}
-    50% {transform: rotate(26deg);}
-    100% {transform: rotate(20deg);}
+  0% {
+    transform: rotate(20deg);
   }
+  50% {
+    transform: rotate(26deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
 
-.createt{
-    font-family: "righteous";
-    font-weight: 500;
+.createt {
+  font-family: "righteous";
+  font-weight: 500;
+}
+
+@media screen and (max-width: 600px) {
+  .subtitle {
+    text-align: center;
+    width: 35rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    max-width: 70vw;
+  }
+  .btn1 {
+    width: 20rem;
+    background-color: #f16a43;
+    height: 3rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+  }
+  .cst {
+    display: none;
+  }
 }
