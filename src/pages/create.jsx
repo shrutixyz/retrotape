@@ -1,11 +1,11 @@
 import { db } from "../utils/utils";
 import Modal from "react-modal";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../styles/create.css";
 import add from "../images/add.svg";
 
 import { doc, setDoc } from "firebase/firestore";
-import { getStorage, ref, uploadBytes } from "firebase/storage";
+// import { getStorage, ref, uploadBytes } from "firebase/storage";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import cassette from "../images/cassette.png";
@@ -16,7 +16,6 @@ const grabLink = require("youtube-thumbnail-grabber");
 
 const Create = () => {
   var navigate = useNavigate();
-  var checking = "hehehe";
 
   const Push = async () => {
     if (songs.length > 15) {
@@ -67,9 +66,9 @@ const Create = () => {
     navigate("/");
   }
 
-  function urlFetcher() {
-    return localStorage.getItem("tapeurl");
-  }
+  // function urlFetcher() {
+  //   return localStorage.getItem("tapeurl");
+  // }
 
   const setNewSong = (newSong) => {
     var tempData = songs;
@@ -120,7 +119,7 @@ const Create = () => {
           </div>
         </div>
         <div className="songsTile">
-          {songs != [] ? (
+          {songs !== [] ? (
             <div className="cassette-parent">
               {songs.map((item) => {
                 return (

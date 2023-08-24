@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import "../styles/footer.css";
 import start from "../images/start.svg";
 import { useEffect, useState } from "react";
@@ -6,9 +6,7 @@ import MenuItem from "./menuitem";
 
 const Footer = () => {
   var exp = "Explore these amazing retrotapes <3";
-  var current = new Date();
   const [currentTime, setCurrentTime] = useState(new Date());
-  const navigate = useNavigate();
   const [show, setShow] = useState(false);
   useEffect(() => {
     const interval = setInterval(() => {

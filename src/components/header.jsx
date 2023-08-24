@@ -21,7 +21,7 @@ const Header = () => {
         <div
           className="options"
           onClick={() => {
-            navigate("/view?87x5x");
+            navigate("/view?rickroll");
           }}
         >
           <img src={minimise} alt="" className="option-icon" srcset="" />
